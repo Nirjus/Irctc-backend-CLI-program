@@ -1,0 +1,114 @@
+[
+  {
+    "trainId": "T001",
+    "trainNumber": "12627",
+    "seats": [[1, 1, 1, 0], [1, 0, 1, 1], [1, 1, 0, 1]],
+    "stationTimes": {
+      "Chennai": "06:00",
+      "Bangalore": "10:30",
+      "Mumbai": "22:00"
+    },
+    "stations": ["Chennai", "Bangalore", "Mumbai"]
+  },
+  {
+    "trainId": "T002",
+    "trainNumber": "12203",
+    "seats": [[1, 1, 1], [0, 1, 1], [1, 0, 1]],
+    "stationTimes": {
+      "Delhi": "05:00",
+      "Kanpur": "08:45",
+      "Lucknow": "11:30",
+      "Patna": "16:00"
+    },
+    "stations": ["Delhi", "Kanpur", "Lucknow", "Patna"]
+  },
+  {
+    "trainId": "T003",
+    "trainNumber": "12951",
+    "seats": [[1, 1], [1, 1], [0, 1]],
+    "stationTimes": {
+      "Mumbai": "07:00",
+      "Surat": "10:30",
+      "Ahmedabad": "14:00"
+    },
+    "stations": ["Mumbai", "Surat", "Ahmedabad"]
+  },
+  {
+    "trainId": "T004",
+    "trainNumber": "12423",
+    "seats": [[1, 0, 1, 1], [1, 1, 1, 0]],
+    "stationTimes": {
+      "Delhi": "09:00",
+      "Jaipur": "13:30",
+      "Jodhpur": "18:00"
+    },
+    "stations": ["Delhi", "Jaipur", "Jodhpur"]
+  },
+  {
+    "trainId": "T005",
+    "trainNumber": "12678",
+    "seats": [[1, 1, 1, 1], [1, 0, 1, 1]],
+    "stationTimes": {
+      "Chennai": "07:30",
+      "Vijayawada": "12:00",
+      "Hyderabad": "17:30"
+    },
+    "stations": ["Chennai", "Vijayawada", "Hyderabad"]
+  },
+  {
+    "trainId": "T006",
+    "trainNumber": "11013",
+    "seats": [[1, 0, 1], [1, 1, 1], [0, 1, 1]],
+    "stationTimes": {
+      "Mumbai": "08:45",
+      "Pune": "12:15",
+      "Solapur": "16:45"
+    },
+    "stations": ["Mumbai", "Pune", "Solapur"]
+  },
+  {
+    "trainId": "T007",
+    "trainNumber": "12301",
+    "seats": [[1, 1, 1, 0], [1, 1, 1, 1]],
+    "stationTimes": {
+      "Kolkata": "06:15",
+      "Dhanbad": "10:45",
+      "Varanasi": "15:30",
+      "Delhi": "22:45"
+    },
+    "stations": ["Kolkata", "Dhanbad", "Varanasi", "Delhi"]
+  },
+  {
+    "trainId": "T008",
+    "trainNumber": "12622",
+    "seats": [[1, 1], [1, 0], [1, 1]],
+    "stationTimes": {
+      "Bangalore": "05:30",
+      "Mysore": "08:00",
+      "Kochi": "15:30"
+    },
+    "stations": ["Bangalore", "Mysore", "Kochi"]
+  },
+  {
+    "trainId": "T009",
+    "trainNumber": "12497",
+    "seats": [[1, 1, 1], [1, 1, 0], [1, 1, 1]],
+    "stationTimes": {
+      "Delhi": "08:00",
+      "Chandigarh": "12:30",
+      "Amritsar": "18:00"
+    },
+    "stations": ["Delhi", "Chandigarh", "Amritsar"]
+  },
+  {
+    "trainId": "T010",
+    "trainNumber": "12841",
+    "seats": [[1, 1, 1, 1], [1, 0, 1, 1]],
+    "stationTimes": {
+      "Bhubaneswar": "07:45",
+      "Cuttack": "08:30",
+      "Kolkata": "16:00"
+    },
+    "stations": ["Bhubaneswar", "Cuttack", "Kolkata"]
+  }
+]

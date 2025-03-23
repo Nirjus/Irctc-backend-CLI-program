@@ -26,7 +26,7 @@ public class App {
         try{
             userBookingServices = new UserBookingServices();
         } catch (IOException e) {
-            System.out.println("There is something wrong!");
+            System.out.println("There is something wrong! " + e.getMessage());
             return;
         }
 
@@ -71,7 +71,15 @@ public class App {
                     }
                     break;
                 case 5:
-                    System.out.println("Book a seats");
+                    System.out.println("------- Book a seats ----");
+                    System.out.println("Enter source: ");
+                    String bookedSource = scanner.next();
+                    System.out.println("Enter destination: ");
+                    String bookedDestination = scanner.next();
+                    System.out.println("Enter the date of travel (DD/MM/YYYY - format): ");
+                    String date = scanner.next();
+                    Date dateOfTime =  UserServicesUtil.dateConversion(date);
+                    userBookingServices.bookSeat(bookedSource,bookedDestination,dateOfTime);
                     break;
                 case 6:
                     System.out.println("Cancel train booking");

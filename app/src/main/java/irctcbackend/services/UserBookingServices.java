@@ -2,16 +2,14 @@ package irctcbackend.services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import irctcbackend.entities.Ticket;
 import irctcbackend.entities.Train;
 import irctcbackend.entities.User;
 import irctcbackend.utils.UserServicesUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 public class UserBookingServices {
 
@@ -22,6 +20,8 @@ public class UserBookingServices {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     private static final String USER_PATH = "app/src/main/java/irctcbackend/localDB/users.json";
+
+    TrainServices trainServices = new TrainServices();
 
     public List<User> loadUsers() throws IOException{
         File users = new File(USER_PATH);
@@ -70,18 +70,46 @@ public class UserBookingServices {
         }
 
         public void fetchBooking(){
-
+            if(!isLogin()){
+                return;
+            }
         user.printTickets();
         }
         public List<Train> getTrains(String source, String destination) {
-            TrainServices trainServices = null;
-            try {
-                trainServices = new TrainServices();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
             return trainServices.searchTrains(source, destination);
         }
+        private boolean isLogin(){
+        return this.user != null;
+        }
+        // Book a seat
+        public void bookSeat(String source, String destination, Date dateOfTravel){
+          if(!isLogin()){
+              return;
+          }
+           Train train = trainServices.findTrain(source, destination);
+          if(train == null){
+              System.out.println("No train available in this route");
+              return;
+          }
+           int[] findAvailableSeats = trainServices.findAvailableSeat(train);
+            if (findAvailableSeats == null) {
+                System.out.println("No available seats on this train.");
+                return;
+            }
+            train.getSeats().get(findAvailableSeats[0]).set(findAvailableSeats[1],0 );
+
+            Ticket newTicket = new Ticket(user.getUserId(),UUID.randomUUID().toString(), source, destination,dateOfTravel, train);
+            user.getTicketBooked().add(newTicket);
+            try {
+                saveUserListFile();
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+                return;
+            }
+            System.out.println("Seat booked successfully, TicketId: " + newTicket.getTicketId());
+        }
+
+//        Cancel booking
         public Boolean cancelBooking(String ticketId){
 
             if (ticketId == null || ticketId.isEmpty()) {

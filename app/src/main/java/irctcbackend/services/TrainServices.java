@@ -6,6 +6,7 @@ import irctcbackend.entities.Train;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,14 +20,17 @@ public class TrainServices {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public void loadTrains() throws IOException {
+    public List<Train> loadTrains() throws IOException {
         File files = new File(TRAIN_PATH);
-        objectMapper.readValue(files, new TypeReference<List<Train>>() {
+        if(!files.exists()){
+            return new ArrayList<>();
+        }
+        return objectMapper.readValue(files, new TypeReference<List<Train>>() {
         });
     }
 
     public TrainServices() throws IOException {
-        loadTrains();
+        this.trainList = loadTrains();
     }
 
     public List<Train> searchTrains(String source, String destination){
@@ -40,4 +44,26 @@ public class TrainServices {
 
         return sourceIndex != -1 && destinationIndex != -1 && sourceIndex < destinationIndex;
      }
+
+    public Train findTrain(String source, String destination) {
+        for (Train train : trainList) {
+            List<String> stations = train.getStations();
+            if (stations.contains(source) && stations.contains(destination)) {
+                return train;
+            }
+        }
+        return null;
+    }
+    public int[] findAvailableSeat(Train train) {
+        List<List<Integer>> seats = train.getSeats();
+        for (int row = 0; row < seats.size(); row++) {
+            for (int col = 0; col < seats.get(row).size(); col++) {
+                if (seats.get(row).get(col) == 1) {  // 1 = available
+                    return new int[]{row, col};  // Return seat position
+                }
+            }
+        }
+        return null;  // No available seat found
+    }
+
 }

@@ -10,7 +10,50 @@
     "name": "Nirjus",
     "password": "Karmakar",
     "hashPassword": "$2a$10$681E2KIyJVDPVJVYfzjrJOYzxXiSnD9PjqJLpCoBn02O3uhNUp2PW",
-    "ticketBooked": [],
+    "ticketBooked": [
+      {
+        "userId": "8323d886-388c-4371-8d7b-f5ec98592793",
+        "ticketId": "109277ec-6d3b-48ea-ad91-f7c216ea4719",
+        "source": "Delhi",
+        "destination": "Patna",
+        "dateOfTravel": -19800000,
+        "train": {
+          "trainId": "T002",
+          "trainNumber": "12203",
+          "seats": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "stationTimes": {
+            "Delhi": "05:00",
+            "Kanpur": "08:45",
+            "Lucknow": "11:30",
+            "Patna": "16:00"
+          },
+          "stations": [
+            "Delhi",
+            "Kanpur",
+            "Lucknow",
+            "Patna"
+          ],
+          "trainInfo": "This ID T002 Train No: 12203"
+        },
+        "ticketInfo": "109277ec-6d3b-48ea-ad91-f7c216ea4719 : source Delhi to Patna"
+      }
+    ],
     "userId": "8323d886-388c-4371-8d7b-f5ec98592793"
   },
   {

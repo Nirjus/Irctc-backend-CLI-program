@@ -33,7 +33,7 @@ public class Ticket{
     }
 
     public String getTicketId() {
-        return ticketId;
+        return this.ticketId;
     }
 
     public void setTicketId(String ticketId) {

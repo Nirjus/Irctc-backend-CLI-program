@@ -1,1 +1,30 @@
-[{"name":"Pablo","password":"picaso","hashPassword":"$2a$10$XTLG8198k61dBoFw8OP8JeUH0oHmX2UgrHb4bgiOAG2Yb5cR9HCs.","ticketBooked":[],"userId":"35941f38-4009-4b88-985f-b0ed47592902"}]
+[
+  {
+    "name": "Pablo",
+    "password": "picaso",
+    "hashPassword": "$2a$10$XTLG8198k61dBoFw8OP8JeUH0oHmX2UgrHb4bgiOAG2Yb5cR9HCs.",
+    "ticketBooked": [],
+    "userId": "35941f38-4009-4b88-985f-b0ed47592902"
+  },
+  {
+    "name": "Nirjus",
+    "password": "Karmakar",
+    "hashPassword": "$2a$10$681E2KIyJVDPVJVYfzjrJOYzxXiSnD9PjqJLpCoBn02O3uhNUp2PW",
+    "ticketBooked": [],
+    "userId": "8323d886-388c-4371-8d7b-f5ec98592793"
+  },
+  {
+    "name": "Naman",
+    "password": "khel",
+    "hashPassword": "$2a$10$ziWAX.CNhQgfk0pIoCrYV.1tvaN1WYD3hnBRWhR9gH0mfMeOUquZi",
+    "ticketBooked": [],
+    "userId": "43190c13-7bdb-4eee-9ded-2f009872545d"
+  },
+  {
+    "name": "Burge",
+    "password": "124Khali4a",
+    "hashPassword": "$2a$10$wCRjklNbuEH6jvaaiPxQFucfkwvstFfFqR7p6w6z94HzCoTTvhNi.",
+    "ticketBooked": [],
+    "userId": "45415a34-bc00-4b62-acec-501191ab2bc8"
+  }
+]

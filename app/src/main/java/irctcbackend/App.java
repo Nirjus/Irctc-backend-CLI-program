@@ -37,28 +37,21 @@ public class App {
                 System.out.println(st);
             }
             option = scanner.nextInt();
-            Train trainSelectedFOrBooking = new Train();
+
             switch (option){
                 case 1:
-                    System.out.print("Enter the username to signup: ");
+                    System.out.println("Enter the username to signup: ");
                     String nameToSignUp = scanner.next();
-                    System.out.println("Enter your passwordToSignUp: ");
+                    System.out.println("Enter your password To SignUp: ");
                     String passwordToSignUp = scanner.next();
-
-                    User userToSignUp = new User(nameToSignUp,UserServicesUtil.hashedPassword(passwordToSignUp), passwordToSignUp, new ArrayList<>(), UUID.randomUUID().toString());
-                    userBookingServices.signUp(userToSignUp);
+                    userBookingServices.signUp(passwordToSignUp, nameToSignUp);
                     break;
                 case 2:
-                    System.out.print("Enter the username to Login: ");
+                    System.out.println("Enter the username to Login: ");
                     String nameToLogin = scanner.next();
-                    System.out.println("Enter your passwordToSignUp to Login: ");
+                    System.out.println("Enter your password to Login: ");
                     String passwordToLogin = scanner.next();
-                    User userToLogin = new User(nameToLogin, UserServicesUtil.hashedPassword(passwordToLogin), passwordToLogin, new ArrayList<>(), UUID.randomUUID().toString());
-                    try {
-                        userBookingServices = new UserBookingServices(userToLogin);
-                    } catch (IOException e) {
-                       return;
-                    }
+                    userBookingServices.loginUser(nameToLogin, passwordToLogin);
                     break;
                 case 3:
                     System.out.println("Fetching your booking");
@@ -66,11 +59,10 @@ public class App {
                     break;
                 case 4:
                     System.out.println("Type your source station");
-                    String source =scanner.nextLine();
+                    String source =scanner.next();
                     System.out.println("Type your destination");
-                    String destination = scanner.nextLine();
+                    String destination = scanner.next();
                     List<Train> trains = userBookingServices.getTrains(source, destination);
-
                     for(Train t:trains){
                         System.out.println("TrainID: " + t.getTrainId());
                         for (Map.Entry<String, String> entry:t.getStationTimes().entrySet()){
@@ -88,6 +80,12 @@ public class App {
                     String trainId = scanner.next();
                     boolean result =userBookingServices.cancelBooking(trainId);
                     System.out.println(result ? "The train is cancel" : "The train is available");
+                    break;
+                case 7:
+                    System.out.println("Thank you for choosing us");
+                    break;
+                default:
+                    System.out.println("Please pick the correct one");
                     break;
             }
         }

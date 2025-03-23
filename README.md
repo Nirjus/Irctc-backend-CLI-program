@@ -18,7 +18,7 @@ This project is a **Java-based IRCTC (Indian Railway Catering and Tourism Corpor
 
 ### **Clone the Repository**
 ```sh
-git clone https://github.com/your-repo-url/IRCTC-Booking-System.git
+git clone [https://github.com/your-repo-url/IRCTC-Booking-System.git](https://github.com/Nirjus/Irctc-backend-CLI-program.git)
 cd IRCTC-Booking-System
 ```
 
